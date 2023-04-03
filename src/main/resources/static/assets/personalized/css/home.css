@@ -1,0 +1,283 @@
+:root {
+    --primary: #CF071F !important;
+    --light: #F0F0F0;
+    --dark: #080B14;
+}
+
+.form-group label {
+    color: #000000;
+    font-weight: 700;
+}
+
+.form-group label::after {
+    content: '*';
+    color: #f00;
+    font-weight: 700;
+    padding-left: 7px;
+}
+
+.icon-group {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border: 1px solid var(--primary);
+}
+
+.logo-tipo {
+    width: 150px;
+    height: 100px;
+}
+
+.bg-dark {
+    background-color: #000000 !important;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.bg-pri {
+    background-color: var(--primary) !important;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    color: #fff;
+    border: 1px solid var(--primary) !important;
+}
+
+.btn-primary:hover {
+    background: rgb(207, 7, 31, 0.8) !important;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #fff;
+}
+
+.btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secundary {
+    color: #fff
+}
+
+
+/*========Section Title==========*/
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    left: -55px;
+    margin-top: -1px;
+    background-color: var(--primary);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+    background-color: var(--primary);
+}
+
+.section-title.text-start::before,
+.section-title.text-end::after {
+    display: none;
+}
+
+
+/*============Header Section============*/
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(15, 23, 43, 0.5);
+    z-index: 1;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 10%;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/*=============== Bookink section =================*/
+
+.booking {
+    position: relative;
+    margin-top: -50px;
+    z-index: 1;
+}
+
+
+/*=========== IMG section===========*/
+
+.img {
+    height: 300px !important;
+}
+
+
+/*=========Scroll bar==========*/
+
+
+/*========= Service Section ===========*/
+
+.service-item {
+    height: 320px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.service-item:hover {
+    background-color: var(--primary);
+}
+
+.service-item .service-icon {
+    margin: 0 auto 30px auto;
+    width: 65px;
+    height: 65px;
+    transition: 0.5s;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: .4rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: .3rem;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+
+/*========= Section About*/
+
+.text-justify {
+    text-align: justify;
+    font-weight: 400;
+    font-size: 15pt;
+    line-height: 1.5;
+}
+
+
+/*Section price*/
+
+.table thead {
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: .1rem !important;
+}
+
+.table tbody tr {
+    border-bottom: .07rem solid var(--primary);
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: .16rem solid var(--primary);
+}
+
+.table {
+    border: .07rem solid var(--primary);
+    border-radius: .1rem !important;
+    font-size: 16pt;
+}
+
+.profile {
+    position: relative;
+    margin-top: -100px;
+    z-index: 1;
+    border-radius: 50% !important;
+    width: 200px;
+}
+
+.profile img {
+    border-radius: 50% !important;
+    height: 200px;
+}
+
+.border-botton {
+    border-bottom: .3rem solid #3666A4 !important;
+}
+
+
+/*================= Section Client Home*/
+
+.nav-menu {
+    padding: 1rem .6rem;
+    min-height: 60vh;
+}
+
+.nav-menu a {
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    color: var(--light);
+    font-size: 13pt;
+    padding: .4rem 1rem;
+}
+
+.nav-menu a:hover {
+    background: rgba(0, 0, 0, .5);
+}
+
+.input-icon {
+    background-color: var(--primary) !important;
+    color: #fff !important;
+}
+
+@media (max-width:512px) {
+    .profile {
+        border-radius: 60% !important;
+        margin-top: -80px;
+        width: 150px !important;
+    }
+    .profile img {
+        border-radius: 60% !important;
+        height: 150px;
+    }
+}

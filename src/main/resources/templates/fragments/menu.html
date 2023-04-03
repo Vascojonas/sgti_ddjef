@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+	<aside class="main-sidebar bg-aside elevation-0" th:fragment="menu">
+		<!-- Brand Logo -->
+
+		
+		<!-- Sidebar -->
+		<div class="sidebar p-0">
+			<!-- Sidebar user panel (optional) -->
+			<div class="text-center p-1">
+				<img class="logo" th:src="@{/assets/img/logotipo.jpeg}" alt="">
+			</div>
+
+
+			<!-- Sidebar Menu -->
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+					data-accordion="false">
+					<!-- Add icons to the links using the .nav-icon class
+       with font-awesome or any other icon font library -->
+					<li class="nav-item">
+						<a href=""
+							class="nav-link link-focus">
+							<i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>
+								Dashboard
+
+							</p>
+						</a>
+					</li>
+
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-suitcase"></i>
+							<p>
+								Viagens
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview menu">
+							<li class="nav-item">
+								<a href=""
+									class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Routas</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href=""
+									class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Veiculos</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Minhas Routas</p>
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-users"></i>
+							<p>
+								Usuarios
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview menu">
+							<li class="nav-item">
+								<a th:href="@{/users/show}" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Listar</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a th:href="@{/users/create}" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Novo</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Usuarios Activos</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Usuarios Bloqueados</p>
+								</a>
+							</li>
+
+						</ul>
+					</li>
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-users"></i>
+							<p>
+								Funcionarios
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview menu">
+							<li class="nav-item ">
+								<a href="" class="nav-link link-focus">
+									<i class="fas fa-plus nav-icon"></i>
+									<p>Novo</p>
+								</a>
+							</li>
+							<li class="nav-item ">
+								<a href="" class="nav-link link-focus">
+									<i class="fas fa-list nav-icon"></i>
+									<p>Listar Todos</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link link-focus">
+									<i class="fas fa-crosshairs nav-icon"></i>
+									<p>Motoristas</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="fas fa-id-badge nav-icon"></i>
+									<p>Bilheteiros</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="" class="nav-link link-focus">
+									<i class="fas fa-user-circle nav-icon"></i>
+									<p>Gestores</p>
+								</a>
+							</li>
+
+						</ul>
+					</li>
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-bus"></i>
+							<p>
+								Viaturas
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview menu">
+							<li class="nav-item">
+								<a th:href="@{/buses/new}" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Nova</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a th:href="@{/buses}" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Listar Todas</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Em circulacao</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Avariadas</p>
+								</a>
+							</li>
+
+						</ul>
+					</li>
+					
+					<li class="nav-item">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>
+								Roles
+
+							</p>
+						</a>
+					</li>
+			
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-cogs"></i>
+							<p>
+								Configuracoes
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview menu">
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Locacao de Viaturas</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Atribuir rotas</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Em circulacao</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Avariadas</p>
+								</a>
+							</li>
+
+						</ul>
+					</li>
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link link-focus">
+							<i class="nav-icon fas fa-compass"></i>
+							<p>
+								Rotas
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview menu">
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Nova rota</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Nova Subrota</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link link-focus">
+									<i class="far fa-circle nav-icon"></i>
+									<p>Rotas Atribuidas</p>
+								</a>
+							</li>
+
+
+						</ul>
+					</li>
+
+
+
+				</ul>
+			</nav>
+			<!-- /.sidebar-menu -->
+		</div>
+		<!-- /.sidebar -->
+	</aside>
+
+</body>
+
+</html>

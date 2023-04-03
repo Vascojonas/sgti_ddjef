@@ -1,0 +1,209 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/personalized/css/home.css}">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/personalized/css/estilo.css}">
+    <link rel="stylesheet" th:href="@{/assets/toastr/toastr.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/adminlte/css/adminlte.min.css}">
+
+    <title>DDJEF-trans | Create account</title>
+</head>
+
+<body>
+
+
+    <div class="container-fluid bg-aside px-0">
+        <div class="row gx-0">
+            <div class="col-lg-3 bg-aside d-none d-lg-block">
+                <a href="" class="navbar-brand w-100 h-100 m-0 p-1 d-flex align-items-center justify-content-center">
+                    <img class="img-fluid rounded logo-tipo" th:src="@{/assets/img/logotipo.jpeg}" alt="">
+                </a>
+
+
+            </div>
+            <div class="col-lg-9 pe-2 pt-2">
+
+
+                <nav class="navbar navbar-expand-lg  bg-aside">
+                    <div class="container-fluid">
+                        <a class="navbar-brand d-block d-lg-none" href="#">
+                            <img class="img-fluid rounded logo-tipo" th:src="@{/assets/img/logotipo.jpeg}" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="navbar-nav mr-auto mb-2 mb-lg-0 me-auto ps-3">
+                                <a class="nav-link " href="#"><i class="fas fa-home me-2"></i>Inicio</a>
+                                <a class="nav-link" href="#service">Sobre a empresa</a>
+                                <a class="nav-link" href="#about"><i class="fas fa-phone-alt me-2"></i>Contactos da
+                                    empresa</a>
+
+
+                            </div>
+                            <div class="ps-3">
+                                <a href="{{ route('auth.login') }}" class="btn btn-primary">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+
+        <div class="d-flex justify-content-center align-items-center w-100" style="min-height: 80vh;">
+            <div class="card w-75">
+                <div class="card-body">
+                    <div class="text-center border mb-2">
+                        <h3 class="section-title  text-primary text-uppercase">Formulario de Registo</h3>
+                    </div>
+                    <form action="{{ route('account.store') }}" method="POST">
+
+                        <div class="form-group form-row mb-2">
+                            <div class="col-md-6">
+                                <label>Primeiro Nome</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control @error('firstName') is-invalid @enderror"
+                                        placeholder="Primeiro Nome" name="firstName">
+
+                                    <span class="invalid-feedback d-block" role="alert"><b></b></span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Ultimo nome/Apelido</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control @error('lastName') is-invalid @enderror"
+                                        placeholder="Ultimo Nome" name="lastName">
+
+                                    <span class="invalid-feedback d-block" role="alert"><b></b></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-row mb-2">
+                            <div class="col-12 col-md-4">
+                                <label>Sexo</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-hockey-puck"></i></span>
+                                    <select class="form-select @error('gender') is-invalid @enderror" name="gender">
+                                        <option value="">Selecione o sexo</option>
+                                        <option value="M">M
+                                        </option>
+                                        <option value="F">F
+                                        </option>
+
+                                    </select>
+
+                                    <span class="invalid-feedback d-block" role="alert"><strong></strong></span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4"><label>Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                        placeholder="Email" name="email">
+
+                                    <span class="invalid-feedback d-block" role="alert"><strong></strong></span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4"><label>Telefone</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-phone-alt"></i></span>
+                                    <input type="number" class="form-control @error('email') is-invalid @enderror"
+                                        placeholder="Numero de telefone" name="phone">
+
+                                    <span class="invalid-feedback d-block" role="alert"><strong></strong></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-row mb-2">
+                            <div class="col-md-6">
+                                <label>Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                        placeholder="Password" name="password">
+
+                                    <span class="invalid-feedback d-block" role="alert"><strong></strong></span>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Confirmar Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text icon-group"><i class="fas fa-lock"></i></span>
+                                    <input type="password"
+                                        class="form-control @error('password_confirmation') is-invalid @enderror"
+                                        placeholder="Password" name="password_confirmation">
+
+                                    <span class="invalid-feedback d-block" role="alert"><strong></strong></span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="role_id" value="4">
+                            <b class="me-2">Campos marcados com <b class="text-danger">*</b> sao obrigatorios.</b>
+                            Tem uma conta? clique <a href="{{route('auth.login')}}">aqui</a> para entrar no sistema
+                        </div>
+                        <div class="modal-footer pb-0">
+                            <button type="submit" class="btn btn-sm btn-outline-success me-3">Criar</button>
+                            <button type="reset" class="btn btn-sm btn-outline-danger ">Cancelar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <footer>
+        <footer class="main-footer text-center mx-0 bg-dark py-5 mb-0">
+            <strong>Copyright &copy; 2022 <span class="text-primary">DDJEF</span>.</strong> Todos Direitos reservados.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Versao</b> 1.0.0
+
+            </div>
+        </footer>
+    </footer>
+    <script th:src="@{/assets/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/adminlte/js/adminlte.js} "></script>
+    <script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/fontAwesome/js/all.min.js}"></script>
+    <script th:src="@{/assets/toastr/toastr.min.js} "></script>
+    <script>
+        /* $(document).ready(function() {
+             toastr.options = {
+                 "closeButton": true,
+                 "progressBar": true
+             }
+             @if (Session::has('error'))
+                 toastr.error("{{ Session::get('error') }}");
+             @endif
+         });*/
+    </script>
+
+</body>

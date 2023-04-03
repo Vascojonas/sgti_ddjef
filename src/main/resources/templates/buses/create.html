@@ -1,0 +1,133 @@
+<html lang="pt" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>DDJEF-TRANS | Buses</title>
+</head>
+<body>
+     <!-- Content Wrapper. Contains page content -->
+     <div class="content-wrapper" layout:fragment="body">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 th:if="${buse.id==null}" class="m-0 text-g">Cadastro de Viaturas<i class="fas fa-bus ms-2"></i></h1>
+                        <h1 th:unless="${buse.id==null}" class="m-0 text-g">Actualizar dados da Viatura<i class="fas fa-bus ms-2"></i></h1>
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <form th:action="@{/buses/save}" th:object="${buse}" method="POST">
+                            
+                            <input type="hidden" th:value="${buse.id}" th:field="*{id}">
+                            <div class="form-group form-row mb-2">
+                                <div class="col-12 col-md-4">
+                                    <label class="obrigatorio">Matricula</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fa fa-bus"></i></span>
+                                        <input type="text"
+                                            class="form-control" th:classappend="${#fields.hasErrors('numberPlate')} ? 'is-invalid'"
+                                            placeholder="Matricula da viatura"th:field="*{numberPlate}" />
+                                            <span class="error-message" th:errors="*{numberPlate}"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label class="obrigatorio">Modelo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
+                                        <select class="form-select" th:classappend="${#fields.hasErrors('model')} ? 'is-invalid'" th:field="*{model}">
+                                            <option value="">Selecione o modelo</option>
+                                            <option th:each="model : ${models}" th:value="${model.value}" th:text="${model.value}"></option>  
+                                        </select>
+                                        <span class="error-message" th:errors="*{numberPlate}"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label class="obrigatorio">Fabricante</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fa fa-bookmark"></i></span>
+                                        <input type="text" class="form-control" th:classappend="${#fields.hasErrors('manufacturer')} ? 'is-invalid'"
+                                            placeholder="Nome do fabricante" th:field="*{manufacturer}">
+                                            <span class="error-message" th:errors="*{manufacturer}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-2 form-row">
+                                <div class="col-12 col-md-4">
+                                    <label class="obrigatorio">Classe</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
+                                        <select class="form-select" th:field="*{type}" th:classappend="${#fields.hasErrors('type')} ? 'is-invalid'">
+                                            <option value="">Selecione a classe</option>
+                                            <option th:each="type : ${types}" th:value="${type.value}" th:text="${type.value}"></option>
+                                        </select>
+                                        <span class="error-message" th:errors="*{type}"></span>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label class="obrigatorio">Assentos</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fa fa-envelope"></i></span>
+                                        <input type="number" step="0" class="form-control" th:classappend="${#fields.hasErrors('seats')} ? 'is-invalid'"
+                                            placeholder="Quantidade de assentos" th:field="*{seats}">
+                                            <span class="error-message" th:errors="*{seats}"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <label class="obrigatorio">Marca</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fa fa-envelope"></i></span>
+                                        <input type="text" class="form-control" th:classappend="${#fields.hasErrors('brand')} ? 'is-invalid'"
+                                            placeholder="Marca da viatura" th:field="*{brand}">
+                                            <span class="error-message" th:errors="*{brand}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-2 ">
+                                <label>Descricao</label>
+                                <textarea class="form-control" placeholder="Descricao da viatura"
+                                th:field="*{description}" rows="6"></textarea>
+                                    <span class="error-message" th:errors="*{description}"></span>
+
+                            </div>
+
+                            <div class="form-row mt-3">
+                                <div class="col-12 col-md-6">
+                                    <span><b>Nota: </b>Todos campos marcados com <span class="obrigatorio"></span> sao
+                                        obrigatorios</span>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <button type="reset" class="btn btn-danger btn-sm float-right"><i
+                                            class="fas fa-times-circle me-2"></i>Cancelar</button>
+                                    <button type="submit" class="btn btn-primary btn-sm float-right mr-4"><i
+                                            class="fas fa-plus-circle me-2"></i>Salvar</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <!-- /.card -->
+
+
+
+            </div>
+            <!--/. container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</body>
+</html>

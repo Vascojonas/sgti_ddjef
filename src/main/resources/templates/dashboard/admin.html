@@ -1,0 +1,231 @@
+<html layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+</head>
+
+<body>
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper" layout:fragment="body">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1 class="m-0 text-dark">Dashboard do Gestor</h1>
+					</div><!-- /.col -->
+
+				</div><!-- /.row -->
+			</div><!-- /.container-fluid -->
+		</div>
+		<!-- /.content-header -->
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="container-fluid">
+				<!-- Info boxes -->
+				<div class="row">
+					<div class="col-12 col-sm-6 col-md-3">
+						<div class="info-box">
+							<span class="info-box-icon bg-info elevation-1 p-2"><i class="fas fa-cog"></i></span>
+							<div class="info-box-content">
+								<span class="info-box-text">Permissoes</span>
+								<span class="info-box-number">
+									10
+									<small>%</small>
+								</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+					</div>
+					<!-- /.col -->
+					<div class="col-12 col-sm-6 col-md-3">
+						<div class="info-box mb-3">
+							<span class="info-box-icon bg-danger elevation-1 p-2"><i class="fas fa-bus"></i></span>
+
+							<div class="info-box-content">
+								<span class="info-box-text">Viaturas</span>
+								<span class="info-box-number">30</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+					</div>
+					<!-- /.col -->
+					<div class="col-12 col-sm-6 col-md-3">
+						<div class="info-box mb-3">
+							<span class="info-box-icon bg-success elevation-1 p-2"><i
+									class="fas fa-shopping-cart"></i></span>
+
+							<div class="info-box-content">
+								<span class="info-box-text">Bilhetes</span>
+								<span class="info-box-number">760</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+					</div>
+					<!-- /.col -->
+					<div class="col-12 col-sm-6 col-md-3">
+						<div class="info-box mb-3">
+							<span class="info-box-icon bg-warning elevation-1 p-2  text-center"><i
+									class="fas fa-users text-white"></i></span>
+
+							<div class="info-box-content">
+								<span class="info-box-text">Usuarios</span>
+								<span class="info-box-number">5</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+
+
+				<!-- /.row -->
+
+				<!-- Main row -->
+				<div class="row">
+					<!-- Left col -->
+					<div class="col-md-9">
+
+
+						<!-- TABLE: LATEST ORDERS -->
+						<div class="card">
+							<div class="card-header border-transparent">
+								<h3 class="card-title">Ultimas Reservas</h3>
+
+								<div class="card-tools">
+									<button type="button" class="btn btn-tool" data-card-widget="collapse">
+										<i class="fas fa-minus"></i>
+									</button>
+									<button type="button" class="btn btn-tool" data-card-widget="remove">
+										<i class="fas fa-times"></i>
+									</button>
+								</div>
+							</div>
+							<!-- /.card-header -->
+							<div class="card-body p-0">
+								<div class="table-responsive">
+									<table class="table m-0">
+										<thead>
+											<tr>
+												<th>Data</th>
+												<th>Ciente</th>
+												<th>Status</th>
+												<th>Assentos</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><a href="pages/examples/invoice.html">03/09/2022</a></td>
+												<td>Filipe Manjate</td>
+												<td><span class="badge badge-success">realizada</span></td>
+												<td>
+													<div class="sparkbar" data-color="#00a65a" data-height="20">2
+														assentos</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="pages/examples/invoice.html">04/09/2022</a></td>
+												<td>Dadiva Muirazeque</td>
+												<td><span class="badge badge-success">realizada</span></td>
+												<td>
+													<div class="sparkbar" data-color="#f39c12" data-height="20">1
+														assento</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="pages/examples/invoice.html">04/09/2022</a></td>
+												<td>Eufrasia Avelino</td>
+												<td><span class="badge badge-danger">cancelada</span></td>
+												<td>
+													<div class="sparkbar" data-color="#f56954" data-height="20">
+														1 assento</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td><a href="pages/examples/invoice.html">25/11/2022</a></td>
+												<td>Dadiva Muirazeque</td>
+												<td><span class="badge badge-warning">Pendente</span></td>
+												<td>
+													<div class="sparkbar" data-color="#f39c12" data-height="20">
+														2 assentos</div>
+												</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+								<!-- /.table-responsive -->
+							</div>
+							<!-- /.card-body -->
+							<div class="card-footer">
+								<a href="" class="btn btn-sm btn-info float-left"><i
+										class="fas fa-print mr-2"></i>Imprimir</a>
+								<a href="" class="btn btn-sm btn-outline-success float-right"><i
+										class="fas fa-eye mr-2"></i> todo Relatorio</a>
+							</div>
+							<!-- /.card-footer -->
+						</div>
+						<!-- /.card -->
+					</div>
+					<!-- /.col -->
+
+					<div class="col-md-3">
+						<!-- Info Boxes Style 2 -->
+						<div class="info-box mb-3 bg-warning">
+							<span class="info-box-icon"><i class="fas fa-tag"></i></span>
+
+							<div class="info-box-content">
+								<span class="info-box-text">Perfis</span>
+								<span class="info-box-number">7</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+						<div class="info-box mb-3 bg-success">
+							<span class="info-box-icon"><i class="far fa-heart"></i></span>
+
+							<div class="info-box-content">
+								<span class="info-box-text">Clientes</span>
+								<span class="info-box-number">50</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+						<div class="info-box mb-3 bg-danger">
+							<span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
+
+							<div class="info-box-content">
+								<span class="info-box-text">Motoristas</span>
+								<span class="info-box-number">50</span>
+							</div>
+							<!-- /.info-box-content -->
+						</div>
+						<!-- /.info-box -->
+
+
+
+					</div>
+					<!-- /.col -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!--/. container-fluid -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+
+
+
+
+</body>
+
+</html>

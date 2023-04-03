@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" th:href="@{/assets/img/logotipo.jpeg}" type="image/x-icon">
+	<link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}">
+	<link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/assets/personalized/css/estilo.css}">
+	<!-- Theme style -->
+	<link rel="stylesheet" th:href="@{/assets/adminlte/css/adminlte.min.css}">
+	<link rel="stylesheet" th:href="@{/assets/scrollbar/css/scrollbars.min.css}">
+	<link rel="stylesheet" th:href="@{/assets/toastr/toastr.min.css}">
+	<link rel="stylesheet" layout:fragment="css">
+	<title> </title>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+	<div class="wrapper">
+
+<!-- Container de todo o corpo -->
+
+        <nav th:replace="~{fragments/header :: header}">
+            <div>Top bar</div>
+        </nav>
+
+        <aside th:replace="~{fragments/menu :: menu}">
+            <div>Side menu</div>
+        </aside>
+
+        <div class="content-wrapper" layout:fragment="body">
+            <section>Main content</section>
+        </div>
+
+        <footer th:replace="~{fragments/footer :: footer}">
+            <div>Footer</div>
+        </footer>
+	</div>
+
+
+	<script th:src="@{/assets/jquery/jquery.min.js}"></script>
+	<script th:src="@{/assets/adminlte/js/adminlte.js}"></script>
+	<script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/scrollbar/js/scrollbars.min.js}"></script>
+	<script th:src="@{/assets/toastr/toastr.min.js}"></script>
+	<script th:src="@{/assets/personalized/info.js}"></script>
+	<script layout:fragment="script"></script>
+	<script>
+		const currentPage = location.href;
+		const menuItem = document.querySelectorAll('a');
+		const length = menuItem.length;
+
+		for (let i = 0; i < length; i++) {
+			if (menuItem[i].href === currentPage) {
+				menuItem[i].classList.add('activo')
+				var node = menuItem[i].parentNode;
+				node = node.parentNode;
+				node = node.parentNode;
+				node.classList.add('menu-open')
+				break
+			}
+
+		}
+	</script>
+</body>
+
+</html>

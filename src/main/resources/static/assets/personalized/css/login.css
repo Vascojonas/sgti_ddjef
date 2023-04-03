@@ -1,0 +1,64 @@
+:root {
+    --box-shadow: .1rem 0 .6rem #CF071F;
+    --primary: #CF071F;
+    --light: #F0F0F0;
+    --dark: #080B14;
+    --link: #CF071F;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-link {
+    color: var(--link)
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+    border: 1px solid var(--primary) !important;
+}
+
+.btn-primary:hover {
+    background: rgb(207, 7, 31, 0.8);
+}
+
+.box {
+    background-color: var(--dark);
+}
+
+.box-1 {
+    box-shadow: var(--box-shadow);
+}
+
+.bg-login {
+    background-color: #EDEDEF;
+}
+
+.bb {
+    background-image: linear-gradient(to right, #CF071F, #CF071F);
+    height: 0.1rem !important;
+    width: 100%;
+    padding: 0;
+}
+
+.form-control {
+    border-color: var(--link);
+}
+
+.form-control:focus {
+    outline: 1px;
+    box-shadow: .3rem 0 .5rem var(--link);
+    border-color: var(--primary);
+}
+
+.icon-group {
+    background-color: var(--primary) !important;
+    color: white !important;
+    border: 1px solid var(--primary);
+}
+
+.img {
+    height: 100%;
+}

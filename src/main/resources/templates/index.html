@@ -1,0 +1,615 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" th:href="@{/assets/img/lgotipo.jpeg}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/personalized/css/home.css}">
+   
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- ============================== Navigation Bar ============================== -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row gx-0">
+            <div class="col-lg-3 bg-dark d-none d-lg-block">
+                <a href=""
+                    class="navbar-brand w-100 h-100 m-0 p-1 d-flex align-items-center justify-content-center">
+                    <img class="img-fluid rounded logo-tipo" th:src="@{/assets/img/logotipo.jpeg}"
+                        alt="">
+                </a>
+
+            </div>
+            <div class="col-lg-9 pe-2 pt-2">
+                <div class="row bg-white gx-0 d-none d-lg-flex">
+                    <div class="col-lg-7 px-5 text-start">
+                        <div class="h-100 d-inline-flex align-items-center py-2 me-4">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <p class="mb-0">ddjef@gmail.com</p>
+                        </div>
+                        <div class="h-100 d-inline-flex align-items-center py-2 me-4">
+                            <i class="fas fa-phone-alt text-primary me-2"></i>
+                            <p class="mb-0">847744257</p>
+                        </div>
+                    </div>
+
+                    <!-- ================ Social Icons ======== -->
+                    <div class="col-lg-5 px-5 text-end">
+                        <div class="h-100 d-inline-flex align-items-center py-2">
+                            <a href="" class="me-3">
+                                <i class="fab fa-facebook-f text-primary"></i>
+                            </a>
+                            <a href="" class="me-3">
+                                <i class="fab fa-linkedin text-primary"></i>
+                            </a>
+                            <a href="" class="me-3">
+                                <i class="fab fa-instagram text-primary"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand d-block d-lg-none" href="#">
+                            <h1 class="m-0 text-primary text-uppercase">TTT</h1>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="navbar-nav mr-auto mb-2 mb-lg-0 me-auto ps-3">
+                                <a class="nav-link " href="#">Home</a>
+                                <a class="nav-link" href="#transport">Nossos Transportes</a>
+                                <a class="nav-link" href="#service">Nossos Servicos</a>
+                                <a class="nav-link" href="#price">Tabela de Precos</a>
+                                <a class="nav-link" href="#about">Sobre Nos</a>
+
+
+                            </div>
+                            <div class="ps-3">
+                                <!-- <a href="{{ route('auth.login') }}" class="btn btn-primary">Login</a> -->
+                                <a href="" class="btn btn-primary">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================== Header Section ============================== -->
+
+    <div class="container-fluid p-0 mb-3">
+        <div class="carousel slide" id="header-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/assets/img/bus-1-0.jpg}" alt="" class="w-100" height="650px">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">O Conforto
+                                na viagem</h6>
+                            <h1 class="display-3 text-white mb-4 animated slideInDown">Venha sentir o nosso conforto
+                            </h1>
+                         <!--<a href="" class="btn btn-light py-md-3 px-md-5 animated slideInDown">Visitar</a> -->
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/assets/img/bus-1-2.webp}" alt="" class="w-100" height="650px">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">O Conforto
+                                na viagem</h6>
+                            <h1 class="display-3 text-white mb-4 animated slideInDown">Venha sentir o nosso conforto
+                            </h1>
+                           <!-- <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInDown">Visitar</a> -->
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/assets/img/bus-1.jpg}" alt="" class="w-100" height="650px">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">O Conforto
+                                na viagem</h6>
+                            <h1 class="display-3 text-white mb-4 animated slideInDown">Aproveite esta oportunidade de
+                                viajar conosco
+                            </h1>
+                            <!-- <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInDown">Visitar</a> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button class="carousel-control-prev " type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span></button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </div>
+    <div class="container-xxl p-0 bg-white">
+
+        <!-- ============================== Booking section ============================== -->
+        <div class="container-fluid booking wow pb-5 fadeIn">
+            <div class="container">
+                <div class="bg-white shadow " style="padding: 35px">
+                    <div class="row g-2">
+                        <div class="col-md-10">
+                            <div class="row g-2">
+                                <div class="col-12">
+                                    <h2> Cria ja a tua conta para poder fazer reservas</h2>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-2">
+                            <a th:href="@{/users/register}" class="btn btn-primary w-100">Criar Conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================== About section ============================== -->
+        <div class="container-xxl py-2">
+            <div class="container shadow py-4" id="about">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 text-center">
+                        <h3 class="section-title  text-primary text-uppercase">Sobre Nos</h3>
+                        <h1 class="mb-4">
+                            Bem vindo a <span class="text-primary text-uppercase">DDJEF Trans</span>
+                        </h1>
+                        <p class="text-justify px-4">
+                            DDJEF Trans é uma empresa de transporte de passageiros em mocambique, facilitando dirariamente 
+                            milhares de viajantes para chegar ao seu destino de forma segura e oportuno.
+                        </p>
+                        <p class="mb-4 text-justify px-4">
+                            Com uma frota de grandes autocarros de luxo, a DDJEF trans oferece translados confortaveis, rapidos e pontuais entre a cidade. 
+                            Cada autocarro tem espaco superior para guardar pequenas malas e bolsas.
+                            
+                        </p>
+                        <div class="row g-3 pb-4 fs-4">
+                            <div class="col-sm-4 wow fadeIn">
+                                <div class="border roudend p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fas fa-bus fa-3x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">24</h2>
+                                        <p class="mb-0">Autocarros</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn">
+                                <div class="border roudend p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fas fa-users fa-3x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">114</h2>
+                                        <p class="mb-0">Clientes</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn">
+                                <div class="border roudend p-1">
+                                    <div class="border rounded text-center p-4">
+                                        <i class="fas fa-users fa-3x text-primary mb-2"></i>
+                                        <h2 class="mb-1" data-toggle="counter-up">27</h2>
+                                        <p class="mb-0">Funcionarios</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Some images -->
+                        <a href="" class="btn btn-primary py-3 px-5 mt-2"><i class="fas fa-eye"></i> Ver
+                            mais</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-6 text-end">
+                                <img th:src="@{/assets/img/bus-1-0.jpg}" alt=""
+                                    class="img-fluid rounded w-75 wow zooIn" style="margin-top: 25%">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img th:src="@{/assets/img/bus-1-1.jpg}" alt="" 
+                                class="img-fluid rounded w-100 wow zooIn">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img th:src="@{/assets/img/bus-1.jpg}" alt=""
+                                    class="img-fluid rounded w-75 wow zooIn">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img th:src="@{/assets/img/bus-1-0.jpg}" alt=""
+                                    class="img-fluid rounded w-75 wow zooIn">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ======================== Section Bus ======================= -->
+        <div class="container-xxl pt-2 pb-5">
+            <div class="container shadow py-4"id="transport">
+                <div class="text-center wow fadeIn">
+                    <h3 class="section-title text-center text-primary text-uppercase">Nossos Transportes</h3>
+                    <h1 class="mb-5">Explore nossos <span class="text-primary text-uppercase">Transportes</span>
+                    </h1>
+                </div>
+                <div class="row g-4">
+
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="transport-items shadow rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img th:src="@{/assets/img/bus-1-0.jpg}" alt=""
+                                    class="img-fluid img">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded px-3 ms-4">
+                                    $100
+                                </small>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="mb-0">1 classe</h5>
+                                    <div class="ps-2">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-tv text-primary me-2"></i>1Tv</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-wifi text-primary me-2"></i>Wifi</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-music text-primary me-2"></i>Musica</small>
+                                    <small class="me-3 pe-3"><i class="fas fa-fan text-primary me-2"></i>AC</small>
+                                </div>
+                                <p class="text-body">
+                                    Luxo e conforto 
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-sm btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="transport-items shadow rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img th:src="@{/assets/img/bus-1-2.webp}" alt=""
+                                    class="img-fluid img" height="400px">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded px-3 ms-4">
+                                    $100
+                                </small>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="mb-0">1 classe</h5>
+                                    <div class="ps-2">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-tv text-primary me-2"></i>1Tv</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-wifi text-primary me-2"></i>Wifi</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-music text-primary me-2"></i>Musica</small>
+                                    <small class="me-3 pe-3"><i class="fas fa-fan text-primary me-2"></i>AC</small>
+                                </div>
+                                <p class="text-body">
+                                    Luxo e conforto
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-sm btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="transport-items shadow rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img th:src="@{/assets/img/bus-1-1.jpg}" alt=""
+                                    class="img-fluid img">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded px-3 ms-4">
+                                    $100
+                                </small>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="mb-0">1 classe</h5>
+                                    <div class="ps-2">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-tv text-primary me-2"></i>1Tv</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-wifi text-primary me-2"></i>Wifi</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-music text-primary me-2"></i>Musica</small>
+                                    <small class="me-3 pe-3"><i class="fas fa-fan text-primary me-2"></i>AC</small>
+                                </div>
+                                <p class="text-body">
+                                    Luxo e conforto
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-sm btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="transport-items shadow rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img th:src="@{/assets/img/zong-1.webp}" alt=""
+                                    class="img-fluid img w-100">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded px-3 ms-4">
+                                    $100
+                                </small>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="mb-0">2 classe</h5>
+                                    <div class="ps-2">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-tv text-primary me-2"></i>1Tv</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-wifi text-primary me-2"></i>Wifi</small>
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-music text-primary me-2"></i>Musica</small>
+                                    <small class="me-3 pe-3"><i class="fas fa-fan text-primary me-2"></i>AC</small>
+                                </div>
+                                <p class="text-body">
+                                    Luxo e conforto
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-sm btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="transport-items shadow rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img th:src="@{/assets/img/zong-1.webp}" alt=""
+                                    class="img-fluid img w-100">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded px-3 ms-4">
+                                    $100
+                                </small>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="mb-0">2 classe</h5>
+                                    <div class="ps-2">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-tv text-primary me-2"></i>1Tv</small>
+                                    <small class="me-3 pe-3"><i class="fas fa-wifi text-primary me-2"></i>Wifi</small>
+                                </div>
+                                <p class="text-body">
+                                    Luxo e conforto
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-sm btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <div class="transport-items shadow rounded overflow-hidden">
+                            <div class="position-relative">
+                                <img th:src="@{/assets/img/zong-1.webp}" alt=""
+                                    class="img-fluid img w-100">
+                                <small
+                                    class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded px-3 ms-4">
+                                    $100
+                                </small>
+                            </div>
+                            <div class="p-4 mt-2">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="mb-0">2 classe</h5>
+                                    <div class="ps-2">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex mb-3">
+                                    <small class="border-end me-3 pe-3"><i
+                                            class="fas fa-tv text-primary me-2"></i>1Tv</small>
+                                    <small class="me-3 pe-3"><i class="fas fa-wifi text-primary me-2"></i>Wifi</small>
+                                </div>
+                                <p class="text-body">
+                                    Luxo e conforto
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="btn btn-sm btn-primary">Ver detalhes</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ======================== Section price ======================= -->
+        <div class="container-xxl py-2">
+            <div class="container shadow py-4 px-3" id="price">
+                <div class="text-center wow fadeInUp">
+                    <h4 class="section-title text-center text-primary text-uppercase">Tabela de Precos</h4>
+                    <h1 class="mb-5">Viage conosco aproveitando os melhores <span class="text-primary">Precos</span>
+                    </h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table rounded">
+                                <thead>
+                                    <tr>
+                                        <th>Partida</th>
+                                        <th>Destino</th>
+                                        <th>Categoria</th>
+                                        <th>Custo</th>
+                                        <th>Desconto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($subroutes as $sub)
+                                        <tr>
+                                            <td>{{$sub->start_at}}</td>
+                                            <td>{{$sub->end_at}}</td>
+                                            <td>{{$sub->type}}</td>
+                                            <td>{{$sub->price}}</td>
+                                            <td>0</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================== Service section ============================== -->
+        <div class="container-xxl py-5">
+            <div class="container shadow py-2" id="service">
+                <div class="text-center wow fadeInUp">
+                    <h6 class="section-title text-center text-primary text-uppercase">Nossos Servicos</h6>
+                    <h1 class="mb-5">Aprecie aqui os nossos <span class="text-primary">Servicos</span></h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <a href="" class="service-item rounded">
+                            <div class="service-icon bg-transparent border rounded p-1 border ">
+                                <div
+                                    class=" border w-100 h-100 rounded d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-bus fa-3x text-primary"></i>
+                                </div>
+                            </div>
+                            <h5 class="mb-5">Transporte</h5>
+                            <p class="text-body mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <a href="" class="service-item rounded">
+                            <div class="service-icon bg-transparent border rounded p-1 border ">
+                                <div
+                                    class=" border w-100 h-100 rounded d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-bus fa-3x text-primary"></i>
+                                </div>
+                            </div>
+                            <h5 class="mb-5">Transporte</h5>
+                            <p class="text-body mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry</p>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp">
+                        <a href="" class="service-item rounded">
+                            <div class="service-icon bg-transparent border rounded p-1 border ">
+                                <div
+                                    class=" border w-100 h-100 rounded d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-bus fa-3x text-primary"></i>
+                                </div>
+                            </div>
+                            <h5 class="mb-5">Transporte</h5>
+                            <p class="text-body mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+  
+
+    <footer>
+        <footer class="main-footer text-center mx-0 bg-dark py-5 mb-0">
+            <strong>Copyright &copy; 2022 <span class="text-primary">SGT</span>.</strong> Todos Direitos reservados.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Versao</b> 1.0.0
+
+            </div>
+        </footer>
+    </footer>
+
+    <script th:src="@{/assets/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/fontAwesome/js/all.min.js}"></script>
+
+
+   
+  <!--  <script>
+        var nav = document.getElementById('nav');
+        document.addEventListener('scroll', () => {
+            window.scrollY > 100 ? nav.classList.add('sticked') : nav.classList.remove('sticked');
+        });
+  -->
+ 
+</body>
+
+</html>

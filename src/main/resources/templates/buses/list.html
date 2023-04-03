@@ -1,0 +1,91 @@
+<html lang="pt" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>DDJEF-TRANS | Buses</title>
+</head>
+<body>
+    
+    <div class="content-wrapper" layout:fragment="body">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-12 text-end">
+                        <h1 class="m-0 text-g">Viaturas</h1>
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+
+                <div class="card">
+                    <div class="card-header">
+                        <a th:href="@{/buses/new}" class="btn btn-sm btn-outline-dark float-end">
+                           <i class="fas fa-plus me-1"></i> Cadastrar
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3" id="search-box">
+                            <input type="text" class="form-control form-control-sm" placeholder="Pesquisar Viatura"
+                                id="input">
+                            <span class="input-group-text input-icon"><i class="fas fa-search"></i></span>
+                        </div>
+                        <table class="table table-sm table-bordered" id="tbl-bus">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Matricula</th>
+                                    <th>Marca</th>
+                                    <th>Modelo</th>
+                                    <th>Estado</th>
+                                    <th>Accao</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                               
+                                    <tr th:each="buse: ${buses}" class="align-middle">
+
+                                        <td th:text="${buse.numberPlate}"></td>
+                                        <td th:text="${buse.brand}"></td>
+                                        <td th:text="${buse.model}"></td>
+                                        <td class="align-middle text-center">
+                                            nao disponivel
+                                      </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <a th:href="@{'/buses/edit/'+ ${buse.id}}" class="btn btn-sm btn-outline-primary p-2"><i
+                                                        class="fa fa-info-circle"></i></a>
+                                                <a th:href="@{'/buses/edit/'+ ${buse.id}}" class="btn btn-sm btn-outline-edit p-2"><i
+                                                        class="fa fa-pen"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- /.card -->
+
+            <!-- Button trigger modal -->
+
+
+
+
+    </div>
+    <!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+</body>
+</html>

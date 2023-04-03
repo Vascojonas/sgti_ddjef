@@ -1,0 +1,195 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" th:href="@{/assets/adminlte/css/adminlte.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet"  th:href="@{/assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/personalized/css/home.css}">
+
+    <title>@yield('title')</title>
+</head>
+
+<body>
+
+    {{-- ============================== Navigation Bar ============================== --}}
+    <div class="container-fluid bg-dark px-0">
+        <div class="row gx-0">
+            <div class="col-lg-3 bg-dark d-none d-lg-block">
+                <a href=""
+                    class="navbar-brand w-100 h-100 m-0 p-1 d-flex align-items-center justify-content-center">
+                    <img class="img-fluid rounded logo-tipo" th:src="@{assets/img/logotipo.jpeg}"
+                        alt="">
+                </a>
+
+
+            </div>
+            <div class="col-lg-9 pe-2 pt-2">
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand d-block d-lg-none" href="#">
+                            <img class="img-fluid rounded logo-tipo" th:src="@{/assets'/img/logotipo.jpeg}"
+                        alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="navbar-nav mr-auto mb-2 mb-lg-0 me-auto ps-3">
+                                <a class="nav-link " href="#"><i class="fas fa-home me-2"></i>Inicio</a>
+                                <a class="nav-link" href="#service">Sobre a empresa</a>
+                                <a class="nav-link" href="#about"><i class="fas fa-phone-alt me-2"></i>Contactos da
+                                    empresa</a>
+
+
+                            </div>
+                            <div class="ps-3">
+                                @auth
+                                <a href="{{ route('auth.logout') }}" class="btn btn-primary">Logout</a>
+                                @endauth
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    {{-- ======================== Section apresentation ================= --}}
+
+    <div class="container-xl p-0 border rounded mt-3">
+        <div id="carousel" class="carousel slide carousel-fade border-botton" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/assets/img/bus-1.jpg}" class="d-block w-100" alt="..." height="220px">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/assets/img/bus-1-0.jpg}" class="d-block w-100" alt="..."
+                        height="220px">
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="row ">
+            <div class="col-12 pb-0">
+                <div class="row">
+                    <div class=" col-lg-3 mb-4 px-4">
+                        <div class="profile bg-white ms-4">
+                            <img  th:src="@{/assets/img/profile.png}" class="d-block w-100 " alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 mb-4 px-4">
+                        <div class="d-md-flex justify-content-between">
+                            <div class="pt-2 d-sm-block">
+                                <h4>{{ucfirst(Auth::user()->name)}} {{ucfirst(Auth::user()->lastName)}}</h4>
+                                <span>{{Auth::user()->role->name}}</span>
+                            </div>
+                            <div class="pt-2 text-end d-sm-block">
+                                <h4>{{Auth::user()->email}}</h4>
+                                <a href="" class="btn btn-sm btn-primary">Ver Perfil <i
+                                        class="fas fa-user ms-2"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {{-- ==============================Section Content============================== --}}
+    <main style="min-height: 100vh;">
+        <div class="container-xl mt-3">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card bg-dark">
+                                <div class="card-header border-transparent">
+                                    <h3 class="card-title text-center fs-5">Menu do cliente</h3>
+                                    <div class="card-tools h-100 align-middle">
+                                        <button style="visibility: hidden" type="button" class="btn btn-tool"
+                                            data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body p-0">
+                                    <div class="nav-menu">
+
+                                        <a href="" class=""><i class="fas fa-home me-2"></i>Inicio</a>
+                                        <a href="{{route('client.reservation')}}" class=""><i class="fas fa-plus-square me-2"></i>Nova
+                                            Resrva </a>
+                                        <a href="" class=""><i class="fas fa-suitcase me-2"></i>Minhas
+                                            Reservas </a>
+                                        <a href="" class=""><i class="fas fa-history me-2"></i>Historico
+                                            de Viagens</a>
+
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-9 border" style="min-height: 40vh">
+
+                    <div class="row" layout:fragment="content">
+                        <section>Main content</section>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+    {{-- ==============================Section Footer============================== --}}
+    <footer>
+        <footer class="main-footer text-center mx-0 bg-dark py-5 mb-0">
+            <strong>Copyright &copy; 2022 <span class="text-primary">DDJEF</span>.</strong> Todos Direitos reservados.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Versao</b> 1.0.0
+
+            </div>
+        </footer>
+    </footer>
+    <script src="{{ asset('assets') }}/jquery/jquery.min.js"></script>
+    <script src="{{ asset('assets') }}/adminlte/js/adminlte.js "></script>
+    <script src="{{ asset('assets') }}/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets') }}/fontAwesome/js/all.min.js"></script>
+
+</body>

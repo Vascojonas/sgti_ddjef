@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+	
+	<head>
+		<meta charset="UTF-8">
+		 <link rel="stylesheet" th:href="@{/assets/DataTables/datatables.min.css}">
+		 <title>DDJEF-TRANS | Employees</title>
+	</head>
+	<body>
+		
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" layout:fragment="body">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-12 text-end">
+                        <h1 class="m-0 text-g"></h1>
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+
+                <div class="card">
+                    <div class="card-header">
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3" id="search-box">
+                            <input type="text" class="form-control form-control-sm" placeholder="Pesquisar Funcionario"
+                                id="input">
+                            <span class="input-group-text input-icon"><i class="fas fa-search"></i></span>
+                        </div>
+                        <table class="table table-sm table-bordered" id="tbl-func">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                    <th>Role</th>
+                                    <th>Accao</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                    <tr th:each="user : ${users}" class="align-middle">
+
+                                        <td th:text="${user.firstName}+ ' ' +${user.lastName}"></tdth>
+
+                                        <td th:text="${user.email}"></tdth>
+                                        <td class="align-middle text-center"><span class="px-2 text-white"
+                                                th:text="${user.status}"></span>
+                                        </td>
+                                        <td class="align-middle text-center" th:text="${user.role.name}"></td>
+                                        <td>
+                                            <div class="text-center">
+                                                <a href="" class="btn btn-sm btn-outline-primary p-2"><i
+                                                        class="fa fa-info-circle"></i></a>
+                                                <a href="" class="btn btn-sm btn-outline-edit p-2"><i
+                                                        class="fa fa-pen"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- /.card -->
+
+            <!-- Button trigger modal -->
+
+
+
+
+    </div>
+    <!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  
+    <script th:src="@{/assets/DataTables/dataTables.min.js}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tbl-func').DataTable();
+        });
+        table = $('#tbl-func').DataTable();
+        $('#input').keyup(function() {
+            table.search($(this).val()).draw();
+        })
+        $('#tbl-func_wrapper').addClass('table-responsive');
+        $("#tbl-func_filter").children("label").remove();
+    </script>
+
+	</body>
+</html>

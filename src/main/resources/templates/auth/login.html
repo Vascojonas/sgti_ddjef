@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DDJEF-trans | Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" th:href="@{/assets/img/logotipo.jpeg}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/personalized/css/login.css}"> 
+    <link rel="stylesheet" th:href="@{/assets/toastr/toastr.min.css}">
+
+
+</head>
+
+<body>
+
+    <div class="d-md-flex justify-content-center align-items-center w-100 vh-100 bg-login">
+
+        <div class="card box-1 elevation-4 col-12 col-md-7 vh-sm-100">
+
+            <div class="row">
+                <div class="col-12 col-md-6 box d-flex justify-content-center align-items-center p-5" style="background-color: black">
+
+                    <img th:src="@{/assets/img/logotipo.jpeg}" alt="" class="img-fluid rounded img">
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <form method="POST" class="p-4" action="">
+                      
+                        <div class="header text-center mt-2 mb-5 fw-bold text-primary">
+                            <h3>Login de acesso</h3>
+                            <div class="bb"></div>
+                        </div>
+                        <div class="mb-3">
+                            @if (Session::get('error'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('error') }}
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="input-group">
+                                <span class="input-group-text icon-group"><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" name="email"
+                                    placeholder="email" value="{{ old('email') }}">
+                            </div>
+                            <span class="text-danger">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <span class="input-group-text icon-group"><i class="fas fa-lock"></i></span>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <span class="text-danger">
+                                @error('password')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+                        
+                        <div class="mb-3 text-center">
+                            <button class="btn btn-primary">Entrar <i class="fa-solid fa-right-to-bracket"></i></button>
+                            <a href="" class="nav-link text-center text-link">Esqueci a minha senha</a>
+                             <a href="" class="btn btn-primary"><b>Criar conta</b></a>
+                             <a href="/" class="btn btn-primary"><b><i class="fas fa-home me-2"></i>pagina Inicial</b></a>
+                        </div>
+                        
+
+
+                    </form>
+                  
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script th:src="@{/assets/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/fontAwesome/js/all.min.js}"></script>
+    <script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/toastr/toastr.min.js}"></script>
+    <script>
+        $(document).ready(function() {
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            @if (Session::has('message'))
+                toastr.success("{{ Session::get('message') }}");
+           
+             @endif
+            
+        });
+    </script>
+
+</body>
+
+</html>
