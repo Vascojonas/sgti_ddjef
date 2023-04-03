@@ -11,7 +11,8 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String home() {
-		return "index";
+//		return "index";
+		return "layout_admin";
 	}
 	
 	@GetMapping("/dashboard")

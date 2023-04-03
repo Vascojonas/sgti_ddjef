@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Home</title>
+
+    <link rel="shortcut icon" th:href="@{assets/img/logotipo.jpeg}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{assets/personalized/css/estilo.css}">
+    <!-- Theme style -->
+    <link rel="stylesheet" th:href="@{assets/adminlte/css/adminlte.min.css}">
+    <link rel="stylesheet" th:href="@{assets/scrollbar/css/scrollbars.min.css}">
+    <link rel="stylesheet" th:href="@{assets/toastr/toastr.min.css}">
+
+    <!-- Algumas paginas -->
+    <link rel="stylesheet" href="{{ asset('assets') }}/DataTables/datatables.min.css">
+  </head>
+
+  <body class="hold-transition sidebar-mini layout-fixed" >
+
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-nav">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-widget="pushmenu" style="cursor: pointer;"><i
+                            class="fas fa-bars"></i></a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ms-auto">
+                <div class="dropdown">
+                    <button class="btn text-white dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="icon-p" th:src="@{assets/img/user.png}" alt=""><span
+                            class="px-2 fw-bold">Vasco Mabui</span>
+                    </button>
+                    <ul class="dropdown-menu" style="background-color: rgba(9, 7, 9,0.2)"
+                        aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Alterar Senha</a></li>
+                        <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                </div>
+            </ul>
+
+
+
+
+        </nav>
+        <!-- /.navbar -->
+
+
+        
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar bg-g elevation-0 bg-dark">
+            <!-- Brand Logo -->
+
+
+            <!-- Sidebar -->
+            <div class="sidebar p-0">
+                <!-- Sidebar user panel (optional) -->
+                <div class=" mt-3 pb-2 mb-3 br">
+
+                    <div class="text-center text-white">
+                        <img class="icon-p img-circle elevation-2" th:src="@{assets/img/logotipo.jpeg}"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="text-center text-menu fs-5 pb-3">
+                    <img class="logo elevation-2" th:src="@{assets/img/logotipo.jpeg}" alt="">
+                </div>
+                
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                            with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link link-focus">
+                                <i class="nav-icon fas fa-suitcase"></i>
+                                <p>
+                                    Viagens
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview menu">
+                                <li class="nav-item">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Routas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Veiculos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('driver.routes')}}" class="nav-link link-focus">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Minhas Routas</p>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link link-focus">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Usuarios
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('manager.users')}}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Listar</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Usuarios Activos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Usuarios Bloqueados</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link link-focus">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Funcionarios
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview menu">
+                                    <li class="nav-item ">
+                                        <a href="{{ route('manager.employees.create') }}" class="nav-link link-focus">
+                                            <i class="fas fa-plus nav-icon"></i>
+                                            <p>Novo</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{ route('manager.employees') }}" class="nav-link link-focus">
+                                            <i class="fas fa-list nav-icon"></i>
+                                            <p>Listar Todos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.drivers') }}" class="nav-link link-focus">
+                                            <i class="fas fa-crosshairs nav-icon"></i>
+                                            <p>Motoristas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="fas fa-id-badge nav-icon"></i>
+                                            <p>Bilheteiros</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.managers') }}" class="nav-link link-focus">
+                                            <i class="fas fa-user-circle nav-icon"></i>
+                                            <p>Gestores</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link link-focus">
+                                    <i class="nav-icon fas fa-bus"></i>
+                                    <p>
+                                        Viaturas
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview menu">
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.buses.create') }}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Nova</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.buses') }}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Listar Todas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Em circulacao</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Avariadas</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="#" class="nav-link link-focus">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Roles
+
+                                    </p>
+                                </a>
+                            </li>
+                            
+                        
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link link-focus">
+                                    <i class="nav-icon fas fa-cogs"></i>
+                                    <p>
+                                        Configuracoes
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview menu">
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.buses.create') }}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Locacao de Viaturas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.routes.driver.config') }}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Atribuir rotas</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Em circulacao</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Avariadas</p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link link-focus">
+                                    <i class="nav-icon fas fa-compass"></i>
+                                    <p>
+                                        Rotas
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview menu">
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.routes.create') }}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Nova rota</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('manager.subroute.create') }}" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Nova Subrota</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link link-focus">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Rotas Atribuidas</p>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+                        
+
+
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+
+            <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-12 text-end">
+                        <h1 class="m-0 text-g">{{$action}}</h1>
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+
+                <div class="card">
+                    <div class="card-header">
+                        <a href="{{ route('manager.employees.create') }}" class="btn btn-primary float-end">
+                            Adicionar Funcionario
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3" id="search-box">
+                            <input type="text" class="form-control form-control-sm" placeholder="Pesquisar Funcionario"
+                                id="input">
+                            <span class="input-group-text input-icon"><i class="fas fa-search"></i></span>
+                        </div>
+                        <table class="table table-sm table-bordered" id="tbl-func">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Perfil</th>
+                                    <th>Accao</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                @foreach ($employees as $employee)
+                                    <tr class="align-middle">
+
+                                        <td>{{ $employee->name }} {{ $employee->lastName }}</td>
+
+                                        <td>{{ $employee->email }}</td>
+                                        <td class="align-middle text-center"><span
+                                                class="{{ $employee->role == 'Admidministrador' ? 'bg-success' : 'bg-papel' }} px-2 text-white "><small>{{ $employee->role }}</small></span>
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <a href="" class="btn btn-sm btn-outline-primary p-2"><i
+                                                        class="fa fa-info-circle"></i></a>
+                                                <a href="" class="btn btn-sm btn-outline-edit p-2"><i
+                                                        class="fa fa-pen"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- /.card -->
+
+            <!-- Button trigger modal -->
+
+
+
+
+    </div>
+    <!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+
+
+        <footer class="main-footer text-center">
+            <strong>Copyright &copy; 2022 <a class="text-danger" href="http://adminlte.io">DDJEF</a>.</strong> Todos
+            Direitos reservados.
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Versao</b> 1.0.0
+
+            </div>
+        </footer>
+    
+    </div>
+
+    <script th:src="@{assets/jquery/jquery.min.js}"></script>
+    <script th:src="@{assets/adminlte/js/adminlte.js}"></script>
+    <script th:src="@{assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{assets/scrollbar/js/scrollbars.min.js}"></script>
+    <script th:src="@{assets/toastr/toastr.min.js}"></script>
+    <script th:src="@{assets/personalized/info.js}"></script>
+    <script>
+        const paginaActual = location.href;
+        const menuItem = document.querySelectorAll('a');
+        const tamanho = menuItem.length;
+
+        for (let i = 0; i < tamanho; i++) {
+            if (menuItem[i].href === paginaActual) {
+                menuItem[i].classList.add('activo')
+                var pai = menuItem[i].parentNode;
+                pai = pai.parentNode;
+                pai = pai.parentNode;
+                pai.classList.add('menu-open')
+                break
+            }
+
+        }
+
+        
+    </script>
+
+    <script src="@{assets/DataTables/dataTables.min.js}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tbl-func').DataTable();
+        });
+        table = $('#tbl-func').DataTable();
+        $('#input').keyup(function() {
+            table.search($(this).val()).draw();
+        })
+        $('#tbl-func_wrapper').addClass('table-responsive');
+        $("#tbl-func_filter").children("label").remove();
+    </script>
+  </body>
+</html>

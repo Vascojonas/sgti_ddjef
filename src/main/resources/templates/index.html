@@ -1,14 +1,17 @@
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
 	<link rel="shortcut icon" th:href="@{/assets/img/lgotipo.jpeg}" type="image/x-icon">
-    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}" >
+    <link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}" >
     <link rel="stylesheet" th:href="@{/assets/personalized/css/home.css}">
    
+   	<link th:href="@{/styles/cssandjs/main.css}" rel="stylesheet" />
     <title>Home</title>
 </head>
 
@@ -514,7 +517,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($subroutes as $sub)
+                                    <!-- @foreach ($subroutes as $sub)
                                         <tr>
                                             <td>{{$sub->start_at}}</td>
                                             <td>{{$sub->end_at}}</td>
@@ -522,7 +525,7 @@
                                             <td>{{$sub->price}}</td>
                                             <td>0</td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach -->
                                 </tbody>
                             </table>
                         </div>
