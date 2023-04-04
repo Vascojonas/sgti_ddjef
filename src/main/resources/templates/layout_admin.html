@@ -7,14 +7,15 @@
 
     <title>Home</title>
 
-    <link rel="shortcut icon" th:href="@{assets/img/logotipo.jpeg}" type="image/x-icon">
-    <link rel="stylesheet" th:href="@{assets/fontAwesome/css/all.min.css}">
-    <link rel="stylesheet" th:href="@{assets/bootstrap/css/bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{assets/personalized/css/estilo.css}">
+    <link rel="shortcut icon" th:href="@{/assets/img/logotipo.jpeg}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/assets/fontAwesome/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/personalized/css/estilo.css}">
+    
     <!-- Theme style -->
-    <link rel="stylesheet" th:href="@{assets/adminlte/css/adminlte.min.css}">
-    <link rel="stylesheet" th:href="@{assets/scrollbar/css/scrollbars.min.css}">
-    <link rel="stylesheet" th:href="@{assets/toastr/toastr.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/adminlte/css/adminlte.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/scrollbar/css/scrollbars.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/toastr/toastr.min.css}">
 
     <!-- Algumas paginas -->
     <link rel="stylesheet" href="{{ asset('assets') }}/DataTables/datatables.min.css">
@@ -36,7 +37,7 @@
 
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper bb" layout:fragment="content" style="border:1px solid red;">
+        <div class="content-wrapper" layout:fragment="content">
 
         </div>
         <!-- /.content-wrapper -->
@@ -49,12 +50,12 @@
     
     </div>
 
-    <script th:src="@{assets/jquery/jquery.min.js}"></script>
-    <script th:src="@{assets/adminlte/js/adminlte.js}"></script>
-    <script th:src="@{assets/bootstrap/js/bootstrap.min.js}"></script>
-    <script th:src="@{assets/scrollbar/js/scrollbars.min.js}"></script>
-    <script th:src="@{assets/toastr/toastr.min.js}"></script>
-    <script th:src="@{assets/personalized/info.js}"></script>
+    <script th:src="@{/assets/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/adminlte/js/adminlte.js}"></script>
+    <script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/scrollbar/js/scrollbars.min.js}"></script>
+    <script th:src="@{/assets/toastr/toastr.min.js}"></script>
+    <script th:src="@{/assets/personalized/info.js}"></script>
     <script>
         const paginaActual = location.href;
         const menuItem = document.querySelectorAll('a');
@@ -75,7 +76,7 @@
         
     </script>
 
-    <script src="@{assets/DataTables/dataTables.min.js}"></script>
+    <script src="@{/assets/DataTables/dataTables.min.js}"></script>
     <script>
         $(document).ready(function() {
             $('#tbl-func').DataTable();

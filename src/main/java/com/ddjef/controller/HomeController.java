@@ -11,12 +11,12 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String home() {
-//		return "index";
-		return "funcionarios/listar";
+		return "index";
 	}
 	
 	@GetMapping("/dashboard")
 	public String dasboard() {
 		return "dashboard/admin";
 	}
+	
 }
