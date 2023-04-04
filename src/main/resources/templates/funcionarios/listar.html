@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-12 text-end">
-                        <h1 class="m-0 text-g">{{$action}}</h1>
+                        <h1 class="m-0 text-g"></h1>
                     </div><!-- /.col -->
 
                 </div><!-- /.row -->
@@ -51,25 +51,8 @@
 
                             </thead>
                             <tbody>
-                                @foreach ($employees as $employee)
-                                    <tr class="align-middle">
-
-                                        <td>{{ $employee->name }} {{ $employee->lastName }}</td>
-
-                                        <td>{{ $employee->email }}</td>
-                                        <td class="align-middle text-center"><span
-                                                class="{{ $employee->role == 'Admidministrador' ? 'bg-success' : 'bg-papel' }} px-2 text-white "><small>{{ $employee->role }}</small></span>
-                                        </td>
-                                        <td>
-                                            <div class="text-center">
-                                                <a href="" class="btn btn-sm btn-outline-primary p-2"><i
-                                                        class="fa fa-info-circle"></i></a>
-                                                <a href="" class="btn btn-sm btn-outline-edit p-2"><i
-                                                        class="fa fa-pen"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                               
+                                   
                             </tbody>
                         </table>
                     </div>
