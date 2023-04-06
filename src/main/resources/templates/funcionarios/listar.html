@@ -51,7 +51,23 @@
 
                             </thead>
                             <tbody>
-                               
+                                 <tr th:each="f : ${funcionarios}" class="align-middle">
+
+                                        <td th:text="${f.nome}"></td>
+
+                                        <td th:text="${f.email}" ></td>
+                                        <td class="align-middle text-center" th:text="${f.cargo}">
+                                                
+                                        </td>
+                                        <td>
+                                            <div class="text-center">
+                                                <a href="" class="btn btn-sm btn-outline-primary p-2"><i
+                                                        class="fa fa-info-circle"></i></a>
+                                                <a href="" class="btn btn-sm btn-outline-edit p-2"><i
+                                                        class="fa fa-pen"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                    
                             </tbody>
                         </table>

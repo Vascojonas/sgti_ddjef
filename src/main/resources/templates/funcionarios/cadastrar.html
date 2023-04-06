@@ -31,7 +31,7 @@
                
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('manager.employees.store') }}" method="POST">
+                        <form th:action="@{/funcionarios/salvar}" th:object="${funcionario}" method="POST">
                            
                             <div class="form-group form-row mb-2">
                                 <div class="col-12 col-md-8">
@@ -39,7 +39,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-user"></i></span>
                                         <input type="text" class="form-control  "
-                                            placeholder="Primeiro nome" name="name" value="">
+                                            placeholder="Primeiro nome" th:field="*{nome}">
                                         
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-user"></i></span>
                                         <input type="text" class="form-control "
-                                            placeholder="Apelido" name="lastName" value="">
+                                            placeholder="Apelido"  th:field="*{apelido}">
                                         
                                     </div>
 
@@ -60,7 +60,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-phone"></i></span>
                                         <input type="number" class="form-control "
-                                            placeholder="Celular pessoal" name="phone" value="">
+                                            placeholder="Celular pessoal"  th:field="*{telefone}">
                                     
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fa fa-envelope"></i></span>
                                         <input type="email" class="form-control "
-                                            placeholder="Email pessoal" name="email" value="">
+                                            placeholder="Email pessoal" th:field="*{email}">
                                     
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                     <label class="obrigatorio">Documento de Identificacao</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
-                                        <select class="form-select " name="documentType">
+                                        <select class="form-select "  th:field="*{tipo_doc}">
                                             <option value="">Selecione o documento</option>
                                             <option  value="BI">Bilhete de Identidade</option>
                                             <option  value="Carta de conducao">Carta de conducao</option>
@@ -94,7 +94,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fa fa-envelope"></i></span>
                                         <input type="text" class="form-control "
-                                            placeholder="Numero do documento de identificacao" name="documentNumber" value="">
+                                            placeholder="Numero do documento de identificacao" th:field="*{numero_doc}">
                                         
                                     </div>
                                 </div>
@@ -103,10 +103,11 @@
                                 <label class="obrigatorio">Cargo</label>
                                 <div class="input-group">
                                     <span class="input-group-text input-icon"><i class="fas fa-paper-plane"></i></span>
-                                    <select name="role" id=""
-                                        class="form-select"> 
+                                    <select class="form-select"  th:field="*{cargo}"> 
                                         <option value="">selecione o cargo</option>
-                                       
+                                        <option value="Gestor">Gestor</option>
+                                        <option value="Motorista">Motorista</option>
+                                        <option value="Bilhoteiro">Bilhoteiro</option>                                      
                                     </select>
                                     
                                 </div>

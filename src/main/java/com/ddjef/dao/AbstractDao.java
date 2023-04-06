@@ -37,14 +37,14 @@ public abstract class AbstractDao<T, PK extends Serializable> {
 		entityManager.remove(entityManager.getReference(entityClass, id));
 	}
 	
-	public T findById(PK id) {
+	public T getById(PK id) {
 		
 		return entityManager.find(entityClass, id);
 	}
 	
 
 	
-	public List<T> findAll() {
+	public List<T> getAll() {
 		
 		return entityManager
 				.createQuery("from " + entityClass.getSimpleName(), entityClass)
