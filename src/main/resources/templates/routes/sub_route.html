@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html 
+  xmlns:th="http://www.thymeleaf.org"
+  layout:decorate="~{layout_admin}"
+>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper"  layout:fragment="content">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-g">Cadastro de Rotas<i class="fa fa-location-arrow ms-2"></i></h1>
+                    </div><!-- /.col -->
+
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{ route('manager.subroute.store') }}" method="POST">
+                           
+                            <div class="form-group mb-2">
+                                <label class="obrigatorio">Local de partida</label>
+                                <div class="input-group">
+                                    <span class="input-group-text input-icon"><i class="fa fa-location-arrow"></i></span>
+                                    <input type="text" name="start_at"
+                                        class="form-control"
+                                        value="">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label class="obrigatorio">Local de destino</label>
+                                <div class="input-group">
+                                    <span class="input-group-text input-icon"><i class="fa fa-location-arrow"></i></span>
+                                    <input type="text" name="end_at"
+                                        class="form-control"
+                                        value="">
+
+                                    
+                                </div>
+
+                            </div>
+                            <div class="form-group form-row mb-2">
+                                <div class="col-md-6">
+                                    <label class="obrigatorio">Preco do bilhete</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
+                                        <input type="number" name="price"
+                                            class="form-control"
+                                            value="">
+
+                                      
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="obrigatorio">Classe</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
+                                        <select class="form-select" name="type">
+                                            <option value="">Selecione a classe</option>
+                                            <option 
+                                                value="Normal">
+                                                Normal</option>
+                                            <option 
+                                                value="1 Classe">1 Classe</option>
+                                            <option 
+                                                value="2 Classe">2 Classe</option>
+                                            <option
+                                                value="3 Classe">3 Classe</option>
+                                            <option
+                                                value="Executivo">Executivo</option>
+                                        </select>
+                                       
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group mb-2 ">
+                                <label>Descricao</label>
+                                <textarea class="form-control" placeholder="Descricao da viatura"
+                                    name="description" rows="3"></textarea>
+                             
+
+                            </div>
+
+                            <div class="form-row mt-3">
+                                <div class="col-12 col-md-6">
+                                    <span><b>Nota: </b>Todos campos marcados com <span class="obrigatorio"></span> sao
+                                        obrigatorios</span>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <button type="reset" class="btn btn-danger btn-sm float-right"><i
+                                            class="fas fa-times-circle me-2"></i>Cancelar</button>
+                                    <button type="submit" class="btn btn-primary btn-sm float-right mr-4"><i
+                                            class="fas fa-plus-circle me-2"></i>Salvar</button>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <!-- /.card -->
+
+
+
+            </div>
+            <!--/. container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->    
+      </body>
+</html>
+
