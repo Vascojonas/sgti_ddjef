@@ -3,7 +3,7 @@ package com.ddjef.domain;
 import jakarta.persistence.*;
 
 
-//@Entity
+@Entity
 @SuppressWarnings("serial")
 
 @Table(name = "FUNCIONARIOS")
