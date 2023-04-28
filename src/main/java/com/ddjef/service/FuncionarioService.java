@@ -16,5 +16,7 @@ public interface FuncionarioService {
 	Funcionario getById(Long id);
 	
 	List<Funcionario> getAll();
+	
+	List<Funcionario> getByRole(String role);
 
 }

@@ -28,7 +28,7 @@ public class Funcionario extends AbstractEntity<Long> {
 	@Column(name ="numero_doc", length=60)
 	private String numero_doc;
 	
-	@Column(name ="cargo", length=60, columnDefinition = "enum('Gestor', 'Motorista', 'Bilhoteiro')")
+	@Column(name ="cargo", length=60, columnDefinition = "enum('Gestor', 'Motorista', 'Bilheteiro')")
 	private String cargo;
 
 	public String getNome() {

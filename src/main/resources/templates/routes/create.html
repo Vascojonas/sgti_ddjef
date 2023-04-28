@@ -11,6 +11,8 @@
     
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper"  layout:fragment="content">
+		
+		
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -29,19 +31,17 @@
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('manager.routes.store') }}" method="POST">
+                        <form th:action="@{/routas/salvar}" th:object="${routa}" method="POST">
                            
                             <div class="form-group form-row mb-2">
                                 <div class="col-12 col-md-6">
                                     <label class="obrigatorio">Partida</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
-                                        <select class="form-select " name="origin">
-                                            <option value="">Selecione a cidade de partida</option>
+                                        <select class="form-select "th:field="*{partida}">
+                                            <option value="">Selecione a pronvicia de partida</option>
                                           <!--  @foreach ($provinces as $province) -->
-                                                <option>
-                                                    
-                                                </option>
+                                                 <option th:each="p : ${pronvicias}" th:value="${p.descricao}" th:text="${p.descricao}"></option>
                                             
 
                                         </select>
@@ -53,11 +53,9 @@
                                     <label class="obrigatorio">Destino</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
-                                        <select class="form-select " name="destination">
-                                            <option value="">Selecione a cidade de destino</option>
-                                          <!--  @foreach ($provinces as $province) -->
-                                                <option ></option>     
-                                         <!--   @endforeach -->
+                                        <select class="form-select " th:field="*{destino}">
+                                            <option value="">Selecione a pronvicia de destino</option>
+                                         	<option th:each="p : ${pronvicias}" th:value="${p.descricao}" th:text="${p.descricao}"></option>
 
                                         </select>
 
@@ -69,7 +67,7 @@
                             <div class="form-group mb-2 ">
                                 <label>Descricao</label>
                                 <textarea class="form-control" placeholder="Descricao da viatura"
-                                    name="description" rows="6"> </textarea>
+                                   th:field="*{descricao}" rows="6"> </textarea>
 
                             </div>
 

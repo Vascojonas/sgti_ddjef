@@ -1,8 +1,8 @@
 package com.ddjef.interfaces;
 
-import com.ddjef.entity.User;
-
 import java.util.List;
+
+import com.ddjef.entity.User;
 
 public interface UserInterfaceService {
 	void save(User user);
