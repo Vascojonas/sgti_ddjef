@@ -28,6 +28,10 @@ public class BuseService {
   public void delete(Buse buse){
     buseRepository.delete(buse);
   }
+  
+  public void delete(Long id){
+	    buseRepository.deleteById(id);
+  }
 
   public Buse findById(Long id){
     return buseRepository.findById(id).orElse(null);

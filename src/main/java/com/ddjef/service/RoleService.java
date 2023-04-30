@@ -19,10 +19,8 @@ public class RoleService {
 
 	
 	public void save(Role role) {
-		// TODO Auto-generated method stub
-
+		
 		roleRepository.save(role);
-
 	}
 
 	

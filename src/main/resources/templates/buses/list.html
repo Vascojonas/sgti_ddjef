@@ -68,6 +68,9 @@
                                                         class="fa fa-info-circle"></i></a>
                                                 <a th:href="@{'/buses/edit/'+ ${buse.id}}" class="btn btn-sm btn-outline-edit p-2"><i
                                                         class="fa fa-pen"></i></a>
+                                                <button  class="btn btn-sm btn-outline-danger p-2 " th:onclick="deletarViatura(event,[[${buse.id}]])">
+													<i class="fas fa-trash-alt"></i>
+												</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -83,7 +86,7 @@
 
             <!-- Button trigger modal -->
 
-
+	<script th:src="@{/js/viatura.js}"></script>
 
 
     </div>

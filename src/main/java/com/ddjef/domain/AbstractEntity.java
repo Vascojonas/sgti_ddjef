@@ -29,8 +29,18 @@ public abstract class AbstractEntity<ID extends Serializable> implements Seriali
 	public AbstractEntity() {
 		  super();
 	}
+	
+	
 
 	  
+	public AbstractEntity(ID id) {
+		super();
+		this.id = id;
+	}
+
+
+
+
 	public ID getId() {
 		return id;
 	}

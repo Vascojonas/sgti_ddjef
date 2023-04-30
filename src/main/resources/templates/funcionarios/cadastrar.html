@@ -33,24 +33,25 @@
                
                 <div class="card">
                     <div class="card-body">
-                        <form th:action="@{/funcionarios/salvar}" th:object="${funcionario}" method="POST">
+						<!--th:action="@{/funcionarios/salvar}"-->
+                        <form  id="form-funcionario" th:object="${funcionario}" method="POST">
                            
                             <div class="form-group form-row mb-2">
                                 <div class="col-12 col-md-8">
                                     <label class="obrigatorio">Primeiro Nome</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-user"></i></span>
-                                        <input type="text" class="form-control  "
+                                        <input type="text" class="form-control" id="nome"
                                             placeholder="Primeiro nome" th:field="*{nome}">
-                                        
                                     </div>
+                                   
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label class="obrigatorio">Apelido</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-user"></i></span>
                                         <input type="text" class="form-control "
-                                            placeholder="Apelido"  th:field="*{apelido}">
+                                            placeholder="Apelido" id="apelido"  th:field="*{apelido}">
                                         
                                     </div>
 
@@ -62,7 +63,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-phone"></i></span>
                                         <input type="number" class="form-control "
-                                            placeholder="Celular pessoal"  th:field="*{telefone}">
+                                            placeholder="Celular pessoal" id="telefone"  th:field="*{telefone}">
                                     
                                     </div>
                                 </div>
@@ -71,7 +72,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fa fa-envelope"></i></span>
                                         <input type="email" class="form-control "
-                                            placeholder="Email pessoal" th:field="*{email}">
+                                            placeholder="Email pessoal" id="email" th:field="*{email}">
                                     
                                     </div>
                                 </div>
@@ -81,7 +82,7 @@
                                     <label class="obrigatorio">Documento de Identificacao</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fas fa-hockey-puck"></i></span>
-                                        <select class="form-select "  th:field="*{tipo_doc}">
+                                        <select class="form-select " id="tipo_doc"  th:field="*{tipo_doc}">
                                             <option value="">Selecione o documento</option>
                                             <option  value="BI">Bilhete de Identidade</option>
                                             <option  value="Carta de conducao">Carta de conducao</option>
@@ -95,8 +96,8 @@
                                     <label class="obrigatorio">Numero do documento</label>
                                     <div class="input-group">
                                         <span class="input-group-text input-icon"><i class="fa fa-envelope"></i></span>
-                                        <input type="text" class="form-control "
-                                            placeholder="Numero do documento de identificacao" th:field="*{numero_doc}">
+                                        <input type="text" class="form-control" 
+                                            placeholder="Numero do documento de identificacao" id="numero_doc" th:field="*{numero_doc}">
                                         
                                     </div>
                                 </div>
@@ -105,7 +106,7 @@
                                 <label class="obrigatorio">Cargo</label>
                                 <div class="input-group">
                                     <span class="input-group-text input-icon"><i class="fas fa-paper-plane"></i></span>
-                                    <select class="form-select"  th:field="*{cargo}"> 
+                                    <select class="form-select" id="cargo"  th:field="*{cargo}"> 
                                         <option value="">selecione o cargo</option>
                                         <option value="Gestor">Gestor</option>
                                         <option value="Motorista">Motorista</option>
@@ -116,7 +117,7 @@
 
                             </div>
 
-
+							<input type="hidden" id="id" th:field="*{id}">
                             <div class="form-row mt-3">
                                 <div class="col-12 col-md-6">
                                     <span><b>Nota: </b>Todos campos marcados com <span class="obrigatorio"></span> sao
@@ -125,8 +126,18 @@
                                 <div class="col-12 col-md-6">
                                     <button type="reset" class="btn btn-danger btn-sm float-right"><i
                                             class="fas fa-times-circle me-2"></i>Cancelar</button>
-                                    <button type="submit" class="btn btn-primary btn-sm float-right mr-4"><i
-                                            class="fas fa-plus-circle me-2"></i>Salvar</button>
+                                      
+                                      
+                                         
+                                    <button th:if="${funcionario.id == null}" type="submit" class="btn btn-primary btn-sm float-right mr-4"><i
+                                            class="fas fa-plus-circle me-2"></i>Salvar
+                                     </button>
+                                      
+                                      
+                                      <button th:unless="${funcionario.id == null}" type="button" class="btn btn-primary btn-sm float-right mr-4"  onclick="actualizarFuncionario(event)">
+										  <i class="fas fa-plus-circle me-2"></i>Actualizar
+									  </button>
+                                    
                                 </div>
 
                             </div>
@@ -143,7 +154,13 @@
             <!--/. container-fluid -->
         </section>
         <!-- /.content -->
+        
+       
+        <script th:src="@{/js/funcionario.js}"></script>
     </div>
     <!-- /.content-wrapper -->
+    
+     
   </body>
+  
 </html>

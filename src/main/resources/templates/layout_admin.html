@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<!--
+    <meta th:name="_csrf" th:content="${_csrf.token}">
+	<meta th:name="_csrf_header" th:content="${_csrf.headerName}">
+	-->
 
     <title>Home</title>
 
@@ -19,6 +24,30 @@
 
     <!-- Algumas paginas -->
     <link rel="stylesheet" href="@{/assets/DataTables/datatables.min.css}">
+    
+    <!-- SweetAlert -->
+    <script th:src="@{/assets/sweetalert2/sweetalert2.js}"></script>
+    
+    <script th:src="@{/assets/jquery/jquery.min.js}"></script>
+    
+     <script th:src="@{/js/global.js}"></script>
+    
+    
+    <!-- 
+    <script>
+		$(function(){
+		   
+		    let token = $("meta[name='_csrf']").attr("content"); 
+		    let header = $("meta[name='_csrf_header']").attr("content"); 
+		    
+		
+		    $(document).ajaxSend(function(e, xhr, options){
+		        xhr.setRequestHeader(header, token);
+		    });
+		})
+	</script>
+	-->
+   
   </head>
 
   <body class="hold-transition sidebar-mini layout-fixed" >
@@ -50,7 +79,7 @@
     
     </div>
 
-    <script th:src="@{/assets/jquery/jquery.min.js}"></script>
+    
     <script th:src="@{/assets/adminlte/js/adminlte.js}"></script>
     <script th:src="@{/assets/bootstrap/js/bootstrap.min.js}"></script>
     <script th:src="@{/assets/scrollbar/js/scrollbars.min.js}"></script>

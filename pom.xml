@@ -52,15 +52,16 @@
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect </artifactId>
 		</dependency>
+		<!-- Server-side Validation -->
+		
 		<dependency>
 			<groupId>org.hibernate.validator</groupId>
 			<artifactId>hibernate-validator</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.sgam</groupId>
-			<artifactId>sgam</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
+		
+
+
 	</dependencies>
 
 	<build>
